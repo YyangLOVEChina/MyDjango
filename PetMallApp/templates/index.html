@@ -1,0 +1,854 @@
+<!-- 主页继承源主页模板 -->
+{% extends 'source_index.html' %}
+{% load static %}
+{% block pagebady %}
+
+    <!-- 公共导航栏部分结束（自动弹出） -->
+    <div class="popup_wrapper">
+        <div class="subscribe_area_pop">
+            <div class="subscribe_area_wrapper">
+                <div class="subscribe_area_left text-center">
+                    <h1>清仓 <span>大甩卖</span></h1>
+                    <h3>最高可享 <span>75%</span> 折扣</h3>
+                    <p>加入我们的时事通讯，就有机会赢取折扣。</p>
+                </div>
+
+                <div class="subscribe_area text-center">
+                    <h2>请在下方输入您的电子邮件！</h2>
+                    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ad
+                        reiciendis.（这里可替换成有意义的中文描述，如：我们会定期为您发送最新优惠信息。）</p>
+                    <div class="subscribe-form-group">
+                        <form action="#">
+                            <input autocomplete="off" type="text" name="message" id="message"
+                                   placeholder="请输入您的电子邮件地址">
+                            <button type="submit">订阅</button>
+                        </form>
+                    </div>
+                    <div class="subscribe-bottom mt-15">
+                        <input type="checkbox" id="newsletter-permission">
+                        <label for="newsletter-permission">不再显示此弹窗</label>
+                    </div>
+                    <span class="popup_off">X</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 轮播区域开始 -->
+    <div class="slider-area slider_common_style fixed-height default_arrow">
+        <!-- 轮播区域内容开始 -->
+        <div class="main-slider-active">
+
+            <!-- 单张幻灯片开始 -->
+            <div class="single-slide slider_animate_style-01" style="background:url({% static 'img/slider/slider_6.jpg' %});">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="slider-content text-start">
+                                <h4>#超级可爱的宝贝！...</h4>
+                                <h1>热门宠物系列 <span>2025 年潮流</span></h1>
+                                <p> Lorem Ipsum 只是印刷和排版行业的虚拟文本。从那时起，Lorem Ipsum
+                                    就一直是该行业的虚拟文本。（这里可替换成有意义的中文描述，如：我们为您精心挑选 2025
+                                    年最潮流的宠物系列，给您的宝贝带来极致体验。）</p>
+                                <div class="slide-btn small-btn">
+                                    <a href="shop.html">立即探索</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 单张幻灯片结束 -->
+
+            <!-- 单张幻灯片开始 -->
+
+            <div class="single-slide slider_animate_style-02" style="background:url({% static 'img/slider/slider_2.jpg' %});">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="slider-content text-center">
+                                <h4>#来自非洲...</h4>
+                                <h1>可爱动物系列 <span>美丽</span> 宠物</h1>
+                                <p> Lorem Ipsum 只是印刷和排版行业的虚拟文本。从那时起，Lorem Ipsum
+                                    就一直是该行业的虚拟文本。（这里可替换成有意义的中文描述，如：我们带来来自非洲的独特宠物，每一只都美丽可爱，等您带回家。）</p>
+                                <div class="slide-btn small-btn">
+                                    <a href="shop.html">立即探索</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 单张幻灯片结束 -->
+
+            <!-- 单张幻灯片开始 -->
+            <div class="single-slide slider_animate_style-02" style="background:url({% static 'img/slider/slider_3.jpg' %});">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="slider-content text-end">
+                                <h4>#始终提供优质服务...</h4>
+                                <h1>最佳宠物护理服务 <span>快乐</span> 永相伴</h1>
+                                <p> Lorem Ipsum 只是印刷和排版行业的虚拟文本。从那时起，Lorem Ipsum
+                                    就一直是该行业的虚拟文本。（这里可替换成有意义的中文描述，如：我们拥有专业的宠物护理团队，为您的宝贝提供最贴心的服务，让它们时刻保持快乐。）</p>
+                                <div class="slide-btn small-btn">
+                                    <a href="shop.html">立即探索</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 单张幻灯片结束 -->
+        </div>
+        <!-- 轮播区域内容结束 -->
+    </div>
+    <!-- 轮播区域结束 -->
+
+    <!-- 超棒的宠物特色滑块区域开始 -->
+    <div class="main-features adp_top">
+        <div class="container-fluid">
+            <!-- 章节标题开始 -->
+            <div class="section-title">
+                <span>#最佳特色</span>
+                <h2>超棒的宠物特色</h2>
+            </div>
+            <!-- 章节标题结束 -->
+            <div class="main_feature_wrapper main_feature_slider default_dot_style">
+
+                <div class="single_feature_wrapper">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 order-lg-1 order-2 feature_left_side">
+                            <div class="main-features-top text-md-right">
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>与应用程序连接</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：可通过专属应用程序，便捷管理宠物健康与生活。）</p>
+                                    </div>
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/1.png' %}" alt="特色图标">
+                                    </div>
+
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>医疗注册</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：每只宠物都经过严格医疗注册，保障健康有迹可循。）</p>
+                                    </div>
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/2.png' %}" alt="特色图标">
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>健身记录</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：为宠物量身定制健身计划，并详细记录健身情况。）</p>
+                                    </div>
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/3.png' %}" alt="特色图标">
+                                    </div>
+
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>全面疫苗接种</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：严格按照标准流程，为宠物提供全面的疫苗接种服务。）</p>
+                                    </div>
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/4.png' %}" alt="特色图标">
+                                    </div>
+
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>完善疫苗服务</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：除了常规疫苗，还提供完善的疫苗相关服务，确保宠物健康无忧。）</p>
+                                    </div>
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/5.png' %}" alt="特色图标">
+                                    </div>
+
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 order-lg-2 order-1 feature_img_side">
+                            <div class="main-feature-center-img">
+                                <a href="#"><img src="{% static 'img/banner/best_item_2.png' %}" alt="特色图片"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 order-lg-3 order-3 feature_right_side">
+                            <div class="main-features-bottom">
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/5.png' %}" alt="特色图标">
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+                                    <div class="main-feature-content">
+                                        <h4>可靠的美容护理</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：提供专业、可靠的宠物美容护理，让您的宠物光彩照人。）</p>
+                                    </div>
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/6.png' %}" alt="特色图标">
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+                                    <div class="main-feature-content">
+                                        <h4>主人粉丝培训</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：为主人提供专业培训，帮助主人更好地与宠物互动。）</p>
+                                    </div>
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/7.png' %}" alt="特色图标">
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+                                    <div class="main-feature-content">
+                                        <h4>完整维生素疗程</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：根据宠物身体状况，定制完整的维生素补充疗程。）</p>
+                                    </div>
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/8.png' %}" alt="特色图标">
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+                                    <div class="main-feature-content">
+                                        <h4>居家习惯培养</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：帮助宠物养成良好的居家习惯，让宠物与主人和谐共处。）</p>
+                                    </div>
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-img">
+                                        <img src="{% static 'img/icons/1.png' %}" alt="特色图标">
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-rating"></i>
+                                    </div> -->
+                                    <div class="main-feature-content">
+                                        <h4>居家习惯培养</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：再次强调帮助宠物养成良好的居家习惯，让宠物与主人和谐共处。）</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="single_feature_wrapper">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 order-lg-1 order-2 feature_left_side">
+                            <div class="main-features-top text-md-right">
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>与应用程序连接</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：可通过专属应用程序，便捷管理宠物健康与生活。）</p>
+                                    </div>
+
+
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-prescription"></i>
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/1.png" alt="特色图标">
+                                    </div>
+                                    -->
+
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>医疗注册</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：每只宠物都经过严格医疗注册，保障健康有迹可循。）</p>
+                                    </div>
+
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-medical-sign"></i>
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/2.png" alt="特色图标">
+                                    </div>
+                                    -->
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>健身记录</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：为宠物量身定制健身计划，并详细记录健身情况。）</p>
+                                    </div>
+
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-stethoscope"></i>
+                                    </div>
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/3.png" alt="特色图标">
+                                    </div>
+                                    -->
+
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>全面疫苗接种</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：严格按照标准流程，为宠物提供全面的疫苗接种服务。）</p>
+                                    </div>
+
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-injection-syringe"></i>
+                                    </div>
+
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/4.png" alt="特色图标">
+                                    </div>
+                                    -->
+
+                                </div>
+
+                                <div class="single-main-features">
+                                    <div class="main-feature-content">
+                                        <h4>优质疫苗产品</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：提供优质的疫苗产品，为宠物健康保驾护航。）</p>
+                                    </div>
+
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-prescription"></i>
+                                    </div>
+
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/4.png" alt="特色图标">
+                                    </div>
+                                    -->
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 order-lg-2 order-1 feature_img_side">
+                            <div class="main-feature-center-img">
+                                <a href="#"><img src="{% static 'img/banner/best_item_1.png' %}" alt="特色图片"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 order-lg-3 order-3 feature_right_side">
+                            <div class="main-features-bottom">
+
+                                <div class="single-main-features">
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/5.png" alt="特色图标">
+                                    </div>
+                                    -->
+
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-herbal"></i>
+                                    </div>
+
+                                    <div class="main-feature-content">
+                                        <h4>可靠的美容护理</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：提供专业、可靠的宠物美容护理，让您的宠物光彩照人。）</p>
+                                    </div>
+                                </div>
+
+                                <div class="single-main-features">
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/6.png" alt="特色图标">
+                                    </div>
+                                    -->
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-love-add"></i>
+                                    </div>
+                                    <div class="main-feature-content">
+                                        <h4>主人粉丝培训</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：为主人提供专业培训，帮助主人更好地与宠物互动。）</p>
+                                    </div>
+                                </div>
+
+                                <div class="single-main-features">
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/7.png" alt="特色图标">
+                                    </div>
+                                    -->
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-pills"></i>
+                                    </div>
+                                    <div class="main-feature-content">
+                                        <h4>完整维生素疗程</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：根据宠物身体状况，定制完整的维生素补充疗程。）</p>
+                                    </div>
+                                </div>
+
+                                <div class="single-main-features">
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/8.png" alt="特色图标">
+                                    </div>
+                                    -->
+
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-ui-home"></i>
+                                    </div>
+                                    <div class="main-feature-content">
+                                        <h4>居家习惯培养</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：帮助宠物养成良好的居家习惯，让宠物与主人和谐共处。）</p>
+                                    </div>
+                                </div>
+
+                                <div class="single-main-features">
+                                    <!-- 若需要图标
+                                    <div class="main-feature-img">
+                                        <img src="img/icons/5.png" alt="特色图标">
+                                    </div>
+                                    -->
+
+                                    <div class="main-feature-icon">
+                                        <i class="icofont-herbal"></i>
+                                    </div>
+
+                                    <div class="main-feature-content">
+                                        <h4>可靠的食品供应</h4>
+                                        <p> Lorem Ipsum
+                                            只是印刷排版行业的填充文本。（此处可替换为具体的业务描述，如：提供可靠的宠物食品，保障宠物饮食健康。）</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 超棒的宠物特色滑块区域结束 -->
+
+    <!-- 食品分类区域开始 -->
+    <div class="food-category-area adp_top adp_bottom">
+        <div class="container text-center">
+            <div class="section-title">
+                <span>#最佳分类</span>
+                <h2>特色分类</h2>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="featured-ctg-slider row">
+                <div class="col-md-3 text-center">
+                    <div class="single-food-category">
+                        <a href="shop.html" class="food-cat-img">
+                            <img src="{% static 'img/icons/ctg_1.png' %}" alt="">
+                        </a>
+                        <h4><a href="shop.html">鸟类食品</a></h4>
+                        <span>（19种商品）</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="single-food-category">
+                        <a href="shop.html" class="food-cat-img">
+                            <img src="{% static 'img/icons/ctg_2.png' %}" alt="">
+                        </a>
+                        <h4><a href="shop.html">犬类食品</a></h4>
+                        <span>（11种商品）</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="single-food-category">
+                        <a href="shop.html" class="food-cat-img">
+                            <img src="{% static 'img/icons/ctg_3.png' %}" alt="">
+                        </a>
+                        <h4><a href="shop.html">豚鼠食品</a></h4>
+                        <span>（9种商品）</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="single-food-category">
+                        <a href="shop.html" class="food-cat-img">
+                            <img src="{% static 'img/icons/ctg_4.png' %}" alt="">
+                        </a>
+                        <h4><a href="shop.html">兔类食品</a></h4>
+                        <span>（16种商品）</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="single-food-category">
+                        <a href="shop.html" class="food-cat-img">
+                            <img src="{% static 'img/icons/ctg_5.png' %}" alt="">
+                        </a>
+                        <h4><a href="shop.html">鱼类食品</a></h4>
+                        <span>（18种商品）</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="single-food-category">
+                        <a href="shop.html" class="food-cat-img">
+                            <img src="{% static 'img/icons/ctg_6.png' %}" alt="">
+                        </a>
+                        <h4><a href="shop.html">猫类食品</a></h4>
+                        <span>（15种商品）</span>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="single-food-category">
+                        <a href="shop.html" class="food-cat-img">
+                            <img src="{% static 'img/icons/ctg_7.png' %}" alt="">
+                        </a>
+                        <h4><a href="shop.html">其他类食品</a></h4>
+                        <span>（11种商品）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 食品分类区域结束 -->
+
+    <!-- 宠物产品区域开始 -->
+    <div class="collective-product adp_bottom">
+        <div class="container-fluid">
+            <!-- 章节标题开始 -->
+            <div class="section-title">
+                <span>#推荐特卖</span>
+                <h2>集合产品</h2>
+            </div>
+            <!-- 章节标题结束 -->
+
+            <!-- 宠物展示开始 -->
+            <div class="feature-pro-active-wrapper">
+                <div class="collective-product-active default_arrow small_arrow default_dot_style row">
+
+                    <!-- 循环展示推荐宠物商品对象 -->
+                    {% for petobj in petObjectlist %}
+                        <!-- 单个产品开始 -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="single-template-product">
+                                <!-- 产品图片开始 -->
+                                <div class="pro-img">
+                                    <!-- 宠物岁数 -->
+                                    <span class="sticker-sale">{{ petobj.age }} 岁</span>
+                                    <!-- 新品/经典 -->
+                                    <span class="sticker-new">{{ petobj.ptype.name }}</span>
+                                    <!-- 宠物图片 -->
+                                    <a href="product-details.html">
+                                        <img class="primary-img" src="{{ petobj.profile.image.url }}"
+                                             alt="单个产品">
+                                    </a>
+
+                                    <!-- 鼠标放上去的变体图片（数据库记录图片地址） -->
+                                    <ul class="grid_color_image">
+                                    {# 判断图片是否为空（petobj.profile.--调用PetProfile模型的判断函数） #}
+                                        {% if petobj.profile.has_image_1 %}
+                                            <li>
+                                                <div class="variant_img">
+                                                    <a class="active" href="#">
+                                                        <img src="{{ petobj.profile.image_1.url }}" alt="变体图片">
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        {% endif %}
+                                        {% if petobj.profile.has_image_2 %}
+                                            <li>
+                                                <div class="variant_img">
+                                                    <a href="#">
+                                                        <img src="{{ petobj.profile.image_2.url }}" alt="变体图片">
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        {% endif %}
+                                        {% if petobj.profile.has_image_3 %}
+                                            <li>
+                                                <div class="variant_img">
+                                                    <a href="#">
+                                                        <img src="{{ petobj.profile.image_3.url }}" alt="变体图片">
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+
+                                    <!-- 搜索图标 -->
+                                    <div class="item_quick_link">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal" title="快速查看"><i
+                                                class="icofont-search"></i></a>
+                                    </div>
+
+                                    <!-- 商品倒计时（根据商品创建时间记录） -->
+                                    <div class="product-count-wrap">
+                                        <div class="product-countdown" data-countdown={{ petobj.take_offtime|date:"Y/m/d" }}></div>
+                                    </div>
+                                </div>
+                                <!-- 产品图片结束 -->
+
+                                <!-- 产品内容开始 -->
+                                <div class="product_content_wrap">
+                                    <div class="product_content">
+                                        <!-- 商品宠物名（根据数据库数据记录） -->
+                                        <h4><a href="product-details.html">{{ petobj.name }}</a></h4>
+                                        <!-- 等级图标（后端数据库进行导入） -->
+                                        <div class="product-rating">
+                                      <!-- 循环生成五颗星 -->
+                                            {% for i in petlevelMax %}
+                                                {% if petobj.petlevel >= i %}
+                                                    <!-- 实星 -->
+                                                    <i class="icofont-ui-rating"></i>
+                                                {% else %}
+                                                    <!-- 空星 -->
+                                                    <i class="icofont-ui-rate-blank"></i>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <!-- 宠物块头码数 -->
+                                        <div class="product_grid_varient">
+                                            <!-- 颜色选框 -->
+                                            <div class="grid_color">
+                                                <span class="active" style="background-color: #ffb2b0"></span>
+                                                <span style="background-color: #0271bc"></span>
+                                                <span style="background-color: #efc87c"></span>
+                                                <span style="background-color: #00c183"></span>
+                                                <span style="background-color: PowderBlue"></span>
+                                            </div>
+
+                                        </div>
+                                        <!-- 价格：原价和特卖价（数据库导入） -->
+                                        <div class="grid_price">
+                                            <span class="regular-price">${{ petobj.price }}</span>
+                                            <del class="discount_price">${{ petobj.special_price }}</del>
+                                        </div>
+
+                                    </div>
+                                    <div class="item_add_cart">
+                                        <a class="grid_compare" href="compare.html" title="对比"><i
+                                                class="icofont-random"></i></a>
+                                        <a class="grid_cart" href="cart.html" title="加入购物车">加入购物车</a>
+                                        <a class="grid_wishlist" href="wishlist.html" title="加入心愿单"><i
+                                                class="icofont-heart-alt"></i></a>
+                                    </div>
+                                </div>
+                                <!-- 产品内容结束 -->
+                            </div>
+                        </div>
+                        <!-- 单个产品结束 -->
+                    {% endfor %}
+                <!-- 商品循环展示结束 -->
+                </div>
+            </div>
+            <!-- 宠物展示结束 -->
+        </div>
+    </div>
+    <!-- 集合产品区域结束 -->
+
+    <!-- 促销板块开始 -->
+    <div class="product_promoton_area adp_bottom">
+        <div class="container-fluid">
+
+            <!-- 单个促销容器 -->
+            <div class="promotion-wrapper promotion_slider_active default_dot_style">
+
+                <!-- 单个促销容器 -->
+                <div class="single-promotion-wrapper">
+                    <div class="row flex-row-reverse">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                            <div class="promotion-img">
+                                <a href="#"><img src="{% static 'img/banner/promotoion_banner_2.jpg' %}" alt="横幅图片"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                            <div class="promotion-content">
+                                <h4>#最佳热卖</h4>
+                                <h2>最新精选产品</h2>
+                                <p> Lorem Ipsum 并非简单的随机文本。它源自一篇古典拉丁文学作品，涉及座位布局。Lorem Ipsum
+                                    并非简单的随机文本。它源自一篇古典拉丁文学作品，涉及座位布局。源自一篇古典拉丁文学作品，涉及座位布局。源自一篇古典拉丁文学作品，涉及座位布局。</p>
+                                <ul class="promotion-list">
+                                    <li> Ipsum 并非简单随机</li>
+                                    <li>宠物 Ipsum 并非简单随机</li>
+                                    <li> Lorem Ipsum 并非简单的随机文本</li>
+                                    <li>宠物 Ipsum 并非简单的随机文本（涉及座位）</li>
+                                    <li> Lorem Ipsum 并非简单的随机文本（涉及重量与座位）</li>
+                                </ul>
+                                <div class="promoton_price">促销价格 : <span class="psl_price">77.50 美元</span></div>
+                                <div class="small-btn icon-btn"><a href="#">查看系列产品</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 单个促销容器结束 -->
+
+                <div class="single-promotion-wrapper">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="promotion-img">
+                                <a href="#"><img src={% static 'img/banner/promotoion_banner_1.jpg' %} alt="横幅图片"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="promotion-content">
+                                <h4>#最佳酷炫智能</h4>
+                                <h2>超级精选产品</h2>
+                                <p> Lorem Ipsum 并非简单的随机文本。它源自一篇古典拉丁文学作品，涉及座位布局。Lorem Ipsum
+                                    并非简单的随机文本。它源自一篇古典拉丁文学作品，涉及座位布局。源自一篇古典拉丁文学作品，涉及座位布局。源自一篇古典拉丁文学作品，涉及座位布局。</p>
+                                <ul class="promotion-list">
+                                    <li> Ipsum 并非简单随机</li>
+                                    <li>宠物 Ipsum 并非简单随机</li>
+                                    <li> Lorem Ipsum 并非简单的随机文本</li>
+                                    <li>宠物 Ipsum 并非简单的随机文本（涉及座位）</li>
+                                    <li> Lorem Ipsum 并非简单的随机文本（涉及重量与座位）</li>
+                                </ul>
+                                <div class="promoton_price">促销价格 : <span class="psl_price">77.50 美元</span></div>
+                                <div class="small-btn icon-btn"><a href="#">查看系列产品</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 单个促销容器结束 -->
+
+
+        </div>
+    </div>
+    <!-- 促销板块结束 -->
+
+    <!-- 服务区域开始 -->
+    <div class="feature-logo-area adp_bottom">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--======= 特色标志包装器  =======-->
+                    <div class="feature-logo-wrapper">
+                        <div class="row">
+
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <!--======= 单个特色标志  =======-->
+                                <div class="single-feature-logo">
+                                    <div class="single-feature-logo__image">
+                                        <img src="img/icons/service_1.png" class="service" alt="">
+                                    </div>
+                                    <div class="single-feature-logo__content">
+                                        <h4 class="title">免费配送</h4>
+                                        <p class="short-desc">此处为免费配送服务的描述，可替换为实际内容。</p>
+                                    </div>
+                                </div>
+                                <!--======= 单个特色标志结束  =======-->
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <!--======= 单个特色标志  =======-->
+                                <div class="single-feature-logo">
+                                    <div class="single-feature-logo__image">
+                                        <img src="img/icons/service_2.png" class="service" alt="">
+                                    </div>
+                                    <div class="single-feature-logo__content">
+                                        <h4 class="title">货到付款</h4>
+                                        <p class="short-desc">此处为货到付款服务的描述，可替换为实际内容。</p>
+                                    </div>
+                                </div>
+                                <!--======= 单个特色标志结束  =======-->
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <!--======= 单个特色标志  =======-->
+                                <div class="single-feature-logo">
+                                    <div class="single-feature-logo__image">
+                                        <img src="img/icons/service_3.png" class="service" alt="">
+                                    </div>
+                                    <div class="single-feature-logo__content">
+                                        <h4 class="title">7天24小时在线支持</h4>
+                                        <p class="short-desc">此处为7天24小时在线支持服务的描述，可替换为实际内容。</p>
+                                    </div>
+                                </div>
+                                <!--======= 单个特色标志结束  =======-->
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12">
+
+                                <div class="single-feature-logo">
+                                    <div class="single-feature-logo__image">
+                                        <img src="{% static 'img/icons/service_4.png' %}" class="service" alt="">
+                                    </div>
+                                    <div class="single-feature-logo__content">
+                                        <h4 class="title">退款保证</h4>
+                                        <p class="short-desc">此处为退款保证服务的描述，可替换为实际内容。</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--======= 特色标志包装器结束  =======-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 服务区域结束 -->
+{% endblock %}

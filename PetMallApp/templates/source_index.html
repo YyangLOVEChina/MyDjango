@@ -1,0 +1,727 @@
+<!--源主页用于其他主页继承-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home || animart pet shop, pet shitter, pet food, pet care bootstrap 5 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+    <!-- icofont css -->
+    <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+    <!-- Slick carousel css -->
+    <link rel="stylesheet" href="{% static 'css/slick-slider.css' %}">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    {#    <!--引入bootstarp 5.3.0  （该版本无需借助jquery实现动态，直接引入自带js即可）-->#}
+    {#    <link rel="stylesheet" href="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css' %}">#}
+    {#    <!--引入图标插件-->#}
+    {#    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free-5.15.4-web/css/fontawesome.min.css' %}">#}
+    {#    <!--引入时间日历样式-->#}
+    {#    <link rel="stylesheet" href="{% static 'plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}">#}
+    <style>
+        {#/* ✅ 确保消息框在浏览器正中央 */#}
+        .overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+        }
+
+        {#/* ✅ 纯色淡红色背景的对话框 */#}
+        .message-box {
+            width: 280px;
+            padding: 20px;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 8px;
+            background: rgba(255, 182, 193, 0.9); /* 淡红色背景 */
+            color: black; /* 文字颜色 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        {#/* user_info.css */#}
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+        .user-avatar {
+            width: 50px; /* 设置头像的宽度 */
+            height: 50px; /* 设置头像的高度 */
+            border-radius: 50%; /* 使图片变为圆形 */
+            object-fit: cover; /* 保证图片等比例填充，不变形 */
+        }
+        .username {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        {#/* 如果用户未登录，头像和用户名会有不同样式 */#}
+        .guest-info .username {
+            font-style: italic;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 头部区域开始 -->
+<header class="header-area header-style-two header-sticky">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <!--  logo开始 -->
+            <div class="col-xl-2 col-lg-2 col-6">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{% static 'img/logo/logo2.png' %}" alt="logo图片">
+                    </a>
+                </div>
+            </div>
+            <!-- logo结束 -->
+
+            <!--PC端显示-->
+            <div class="col-xl-8 col-lg-8 d-none d-lg-block">
+                <nav>
+                    <ul class="header-menu-list text-center">
+                        <li class="active">
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li><a href="shop.html">店铺</a></li>
+                        <li>
+                            <a class="drop-icon" href="#">流浪宠物领养</a>
+                            <!-- 产品详情下拉菜单开始 -->
+                            <ul class="common_ddown">
+                                <li>
+                                    <a href="product-details.html">哺乳类</a>
+                                </li>
+                                <li>
+                                    <a href="product-details-2.html">鸟类</a>
+                                </li>
+                                <li>
+                                    <a href="product-details-2.html">爬行类</a>
+                                </li>
+                                <li>
+                                    <a href="product-details-2.html">鱼类</a>
+                                </li>
+                            </ul>
+                            <!-- 产品详情下拉菜单结束 -->
+                        </li>
+                        <li><a href="blog.html">博客</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 购物车区域开始 -->
+            <div class="col-xl-2 col-lg-2 col-6">
+                <div class="cart-box">
+                    <ul>
+                        <!-- 搜索框开始 -->
+                        <li class="drodown-show">
+                            <a href="#"><span class="icofont-search"></span></a>
+                            <div class="dropdown categorie-search-box">
+                                <form action="#">
+                                    <input type="text" name="search" placeholder="搜索我们的商品">
+                                    <button>
+                                        <span class="icofont-search"></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                        <!-- 分类搜索框结束 -->
+                        <li class="drodown-show">
+                            <a href="#"><span class="icofont-cart-alt"></span><span class="total-pro">2</span></a>
+                            <ul class="dropdown cart-box-width">
+                                <li>
+                                    <!-- 购物车项开始 -->
+                                    <div class="single-cart-box">
+                                        <div class="cart-img">
+                                            <a href="#">
+                                                <img src="{% static 'img/products/p1.jpg' %}" alt="购物车商品图片">
+                                            </a>
+                                        </div>
+                                        <div class="cart-content">
+                                            <h6>
+                                                <a href="product-details.html">商品标题 1</a>
+                                            </h6>
+                                            <span>中号，红色</span>
+                                            <span class="cart-price">35.00 美元 x 1</span>
+                                        </div>
+                                        <a class="del-icone" href="#">
+                                            <i class="ion-close"></i>
+                                        </a>
+                                    </div>
+                                    <!-- 购物车项结束 -->
+                                    <!-- 购物车项开始 -->
+                                    <div class="single-cart-box">
+                                        <div class="cart-img">
+                                            <a href="#">
+                                                <img src="{% static 'img/products/p2.jpg' %}" alt="购物车商品图片">
+                                            </a>
+                                        </div>
+                                        <div class="cart-content">
+                                            <h6>
+                                                <a href="product-details.html">商品标题 2</a>
+                                            </h6>
+                                            <span>大号，白色</span>
+                                            <span class="cart-price">22.00 美元 x 1</span>
+                                        </div>
+                                        <a class="del-icone" href="#">
+                                            <i class="ion-close"></i>
+                                        </a>
+                                    </div>
+                                    <!-- 购物车项结束 -->
+                                    <!-- 购物车底部开始 -->
+                                    <div class="cart-footer">
+                                        <ul class="price-content">
+                                            <li>小计
+                                                <span>85.00 美元</span>
+                                            </li>
+                                            <li>运费
+                                                <span>5.50 美元</span>
+                                            </li>
+                                            <li>总计
+                                                <span>90.50 美元</span>
+                                            </li>
+                                        </ul>
+                                        <div class="cart-actions text-center">
+                                            <a class="cart-checkout" href="checkout.html">结账</a>
+                                            <a class="cart-checkout" href="cart.html">查看购物车</a>
+                                        </div>
+                                    </div>
+                                    <!-- 购物车底部结束 -->
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="drodown-show"><a href="#"><span class="icofont-gear"></span></a>
+                            <!-- 货币与语言选择开始 -->
+                            <ul class="dropdown cart-box-width currency-selector">
+                                <li>
+                                    <div class="single-select-block">
+                                        <h3>我的账户</h3>
+                                        <!-- user_info.html -->
+                                        <div class="user-info">
+                                            <!-- 如果用户登录了 -->
+                                            {% if user_email %}
+                                                <div class="user-details">
+                                                    <!-- 用户头像 -->
+                                                    <img src="{{ avatar }}" alt="User Avatar" class="user-avatar">
+                                                    <!-- 用户名 -->
+                                                    <span class="username">欢迎，{{ username }}</span>
+                                                    <a href="#" style="color: red">个人中心</a>
+                                                </div>
+                                            {% else %}
+                                                <!-- 如果用户未登录，显示默认信息 -->
+                                                <div class="guest-info">
+                                                    <img src="/media/Image/user/user_default.jpg" alt="Default
+                                                    Avatar" class="user-avatar">
+                                                    <span class="username">未登录？</span>
+                                                    <a href="/login/" class="a-denglu">注册&登录</a>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-select-block">
+                                        <h3>语言</h3>
+                                        <select>
+                                            <option value="1">英语</option>
+                                            <option value="2">法语</option>
+                                            <option value="3">普通话</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 货币与语言选择结束 -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 购物车结束 -->
+        </div>
+        <!-- 上PC显示 -->
+
+        <!-- 用于移动端显示 -->
+        <div class="mobile-menu d-block d-lg-none">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">首页</a>
+                        <!-- 首页版本下拉菜单结束 -->
+                    </li>
+                    <li>
+                        <a href="#">所有产品</a>
+                    </li>
+                    <li><a href="shop.html">商店</a></li>
+                    <li>
+                        <a href="#">产品</a>
+                        <!-- 产品详情下拉菜单开始 -->
+                        <ul>
+                            <li>
+                                <a href="product-details.html">哺乳类</a>
+                            </li>
+                            <li>
+                                <a href="product-details-2.html">鸟类</a>
+                            </li>
+                            <li>
+                                <a href="product-details-2.html">爬行类</a>
+                            </li>
+                            <li>
+                                <a href="product-details-2.html">鱼类</a>
+                            </li>
+                        </ul>
+                        <!-- 产品详情下拉菜单结束 -->
+                    </li>
+                    <li><a href="blog.html">博客</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- 移动端显示结束 -->
+    </div>
+    <!-- Container End -->
+</header>
+<!-- 头部区域结束 -->
+
+
+{% block pagebady %}{% endblock %}
+
+
+<!-- 公共尾部信息 -->
+
+<!-- 页脚区域开始 -->
+<footer>
+    <div class="footer_area_wrapper footer_color_bg footer_image_bg"
+         style="background: url({% static 'img/bg/footer_bg_2.jpg' %})">
+        <div class="container-fluid">
+            <!-- 页脚中间部分开始 -->
+            <div class="footer-top adp_top adp_bottom">
+                <div class="row">
+
+                    <!-- 单个页脚内容开始 -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                        <div class="footer_widget">
+                            <h4 class="footer-title">联系我们</h4>
+                            <div class="footer-content">
+                                <p>Lorem Ipsum 只是印刷和排版行业的虚拟文本。Lorem ipsum dolor sit amet.</p>
+                                <ul class="footer_contact">
+                                    <li><i class="icofont-home"></i><span>地址：</span> 美国纽约 Unkisn - 23584</li>
+                                    <li><i class="icofont-ui-dial-phone"></i><span>电话：</span> 010 32654 8564</li>
+                                    <li><i class="icofont-fax"></i><span>传真：</span> 003 85648 158954</li>
+                                    <li><i class="icofont-email"></i><span>邮箱：</span> support@example.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 单个页脚内容结束 -->
+
+                    <!-- 单个页脚内容开始 -->
+                    <div class="col-xl-2 col-lg-3 col-md-6 col-12">
+                        <div class="footer_widget">
+                            <h4 class="footer-title">信息</h4>
+                            <div class="footer-content">
+                                <ul class="footer-list">
+                                    <li><a href="#">关于我们</a></li>
+                                    <li><a href="#">联系我们</a></li>
+                                    <li><a href="#">隐私政策</a></li>
+                                    <li><a href="#">条款与条件</a></li>
+                                    <li><a href="#">配送政策</a></li>
+                                    <li><a href="#">条款与条件</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 单个页脚内容结束 -->
+
+                    <!-- 单个页脚内容开始 -->
+                    <div class="col-xl-2 col-lg-3 col-md-6 col-12">
+                        <div class="footer_widget">
+                            <h4 class="footer-title">获取帮助</h4>
+                            <div class="footer-content">
+                                <ul class="footer-list">
+                                    <li><a href="#">配送信息</a></li>
+                                    <li><a href="#">销售条款与条件</a></li>
+                                    <li><a href="#">退货与退款</a></li>
+                                    <li><a href="#">隐私声明</a></li>
+                                    <li><a href="#">我的账户</a></li>
+                                    <li><a href="#">购物常见问题</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 单个页脚内容结束 -->
+
+                    <!-- 单个页脚内容开始 -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                        <div class="footer_widget">
+                            <h4 class="footer-title">Instagram 画廊</h4>
+                            <div class="footer-content">
+                                <ul class="instagram-img">
+                                    <li><a class="img-popup-2"
+                                           href="{% static 'img/portfolio/inst_port_1.jpg' %}"><img
+                                            src="{% static 'img/portfolio/inst_port_1.jpg' %}" alt="instagram-img"></a>
+                                    </li>
+                                    <li><a class="img-popup-2"
+                                           href="{% static 'img/portfolio/inst_port_2.jpg' %}"><img
+                                            src="{% static 'img/portfolio/inst_port_2.jpg' %}" alt="instagram-img"></a>
+                                    </li>
+                                    <li><a class="img-popup-2"
+                                           href="{% static 'img/portfolio/inst_port_3.jpg' %}"><img
+                                            src="{% static 'img/portfolio/inst_port_3.jpg' %}" alt="instagram-img"></a>
+                                    </li>
+                                    <li><a class="img-popup-2"
+                                           href="{% static 'img/portfolio/inst_port_4.jpg' %}"><img
+                                            src="{% static 'img/portfolio/inst_port_4.jpg' %}" alt="instagram-img"></a>
+                                    </li>
+                                    <li><a class="img-popup-2"
+                                           href="{% static 'img/portfolio/inst_port_5.jpg' %}"><img
+                                            src="{% static 'img/portfolio/inst_port_5.jpg' %}" alt="instagram-img"></a>
+                                    </li>
+                                    <li><a class="img-popup-2"
+                                           href="{% static 'img/portfolio/inst_port_6.jpg' %}"><img
+                                            src="{% static 'img/portfolio/inst_port_6.jpg' %}" alt="instagram-img"></a>
+                                    </li>
+                                    <li><a class="img-popup-2"
+                                           href="{% static 'img/portfolio/inst_port_7.jpg' %}"><img
+                                            src="{% static 'img/portfolio/inst_port_7.jpg' %}" alt="instagram-img"></a>
+                                    </li>
+                                    <li><a class="img-popup-2"
+                                           href="{% static 'img/portfolio/inst_port_8.jpg' %}"><img
+                                            src="{% static 'img/portfolio/inst_port_8.jpg' %}" alt="instagram-img"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 单个页脚内容结束 -->
+
+                    <!-- 单个页脚内容开始 -->
+                    <div class="col-xl-2 col-lg-4 col-md-6 col-12">
+                        <div class="footer_widget">
+                            <h4 class="footer-title">含应用的新闻通讯</h4>
+                            <p>Lorem Ipsum 只是印刷和排版的虚拟文本。</p>
+                            <div class="subscribtion_form">
+                                <form action="#" method="post">
+                                    <input type="email" name="mail" class="form-control mail"
+                                           placeholder="您的电子邮件地址">
+                                    <button type="submit" class="submit"><i class="icofont-long-arrow-right"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="single_footer_apps">
+                                <div class="footer_heading">
+                                    <h6>下载我们的移动应用</h6>
+                                </div>
+                                <div class="apps_download">
+                                    <a href="#"><img src="{% static 'img/icons/play-store.png' %}"
+                                                     alt="应用商店"></a>
+                                    <a href="#"><img src="{% static 'img/icons/app-store.png' %}"
+                                                     alt="苹果商店"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 单个页脚内容结束 -->
+
+                </div>
+                <!-- 行结束 -->
+            </div>
+            <!-- 页脚中间部分结束 -->
+        </div>
+        <!-- 页脚底部开始 -->
+        <div class="footer-bottom ">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="footer-copyright ">
+                            <p>版权所有 @ <a href="#">Animart </a> 保留所有权利 <a target="_blank"
+                                                                                   href="https://www.mobanwang.com/"
+                                                                                   title="网站模板">网站模板</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="footer-bottom-right text-center">
+                            <ul class="footer-social-icon ">
+                                <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                                <li><a href="#"><i class="icofont-brand-youtube"></i></a></li>
+                                <li><a href="#"><i class="icofont-google-plus"></i></a></li>
+                                <li><a href="#"><i class="icofont-linkedin"></i></a></li>
+                                <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="support_pay text-end">
+                            <a href="#"><img src="{% static 'img/icons/payments.png' %}" alt="支付方式"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页脚底部结束 -->
+    </div>
+</footer>
+<!-- 页脚区域结束 -->
+
+<!-- 快速查看内容开始 -->
+<div class="main-product-thumbnail quick-thumb-content">
+    <div class="container">
+        <!-- 模态框 -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- 模态框头部 -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-bs-dismiss="modal">×</button>
+                    </div>
+                    <!-- 模态框主体 -->
+                    <div class="modal-body">
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="product-details product_details_1">
+                                    <div class="product-details-img">
+                                        <div class="tab-content main_large_img product-details-large">
+                                            <div id="shop-details-1" class="tab-pane large-img-style">
+                                                <img src="{% static 'img/products/p1.jpg' %}" alt="产品图片1">
+                                            </div>
+                                            <div id="shop-details-2" class="tab-pane active large-img-style">
+                                                <img src="{% static 'img/products/p2.jpg' %}" alt="产品图片2">
+                                            </div>
+                                            <div id="shop-details-3" class="tab-pane large-img-style">
+                                                <img src="{% static 'img/products/p3.jpg' %}" alt="产品图片3">
+                                            </div>
+                                            <div id="shop-details-4" class="tab-pane large-img-style">
+                                                <img src="{% static 'img/products/p4.jpg' %}" alt="产品图片4">
+                                            </div>
+
+                                            <span class="sticker-sale"> 优惠25%</span>
+                                            <span class="sticker-new">新品上市</span>
+
+                                        </div>
+
+                                        <div class="shop-details-tab nav product-details-small">
+                                            <a class="shop-details-overly" href="#shop-details-1"
+                                               data-bs-toggle="tab">
+                                                <img src="{% static 'img/products/p1.jpg' %}" alt="产品图片1">
+                                            </a>
+                                            <a class="shop-details-overly active" href="#shop-details-2"
+                                               data-bs-toggle="tab">
+                                                <img src="{% static 'img/products/p2.jpg' %}" alt="产品图片2">
+                                            </a>
+                                            <a class="shop-details-overly" href="#shop-details-3"
+                                               data-bs-toggle="tab">
+                                                <img src="{% static 'img/products/p3.jpg' %}" alt="产品图片3">
+                                            </a>
+                                            <a class="shop-details-overly" href="#shop-details-4"
+                                               data-bs-toggle="tab">
+                                                <img src="{% static 'img/products/p4.jpg' %}" alt="产品图片4">
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 缩略图描述开始 -->
+                            <div class="col-md-6">
+                                <div class="thubnail-desc ">
+                                    <h3 class="product-header"><a href="#">这里是产品详细名称</a></h3>
+                                    <ul class="rating-summary">
+                                        <li class="rating-pro">
+                                            <i class="icofont-ui-rating"></i>
+                                            <i class="icofont-ui-rating"></i>
+                                            <i class="icofont-ui-rate-blank"></i>
+                                            <i class="icofont-ui-rate-blank"></i>
+                                            <i class="icofont-ui-rate-blank"></i>
+                                        </li>
+                                        <li class="read-review"><a href="#">查看评价（2条）</a></li>
+                                        <li class="write-review"><a href="#">撰写评价</a></li>
+                                    </ul>
+                                    <div class="pro-thumb-price mt-20">
+                                        <span class="regular-price">98.25美元</span>
+                                        <del class="discount_price">72.00美元</del>
+                                    </div>
+
+                                    <div class="pro-desc-details">
+                                        此产品描述部分为占位文本，实际内容待填充。Lorem ipsum dolor sit amet,
+                                        consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna
+                                        aliqua. Ut enim ad minim venialo quis nostrud ullamco. Enim ad minim venialo
+                                        quis nostrud ullamco.
+                                    </div>
+
+                                    <div class="product-varient-wrapper">
+                                        <div class="product-color pv_class clearfix">
+                                            <label>颜色：</label>
+                                            <select class="">
+                                                <option>红色</option>
+                                                <option>绿色</option>
+                                                <option>蓝色</option>
+                                                <option>黑色</option>
+                                                <option>黄色</option>
+                                                <option>粉色</option>
+                                            </select>
+                                        </div>
+                                        <div class="product-size pv_class clearfix">
+                                            <label>尺码：</label>
+                                            <select class="">
+                                                <option>小号</option>
+                                                <option>中号</option>
+                                                <option>大号</option>
+                                                <option>加大号</option>
+                                                <option>加加大号</option>
+                                                <option>3加大号</option>
+                                            </select>
+                                        </div>
+                                        <div class="product-tag pv_class clearfix">
+                                            <label>标签：</label>
+                                            <select class="">
+                                                <option>猫</option>
+                                                <option>狗</option>
+                                                <option>鱼</option>
+                                                <option>马</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="details_action_wraper">
+                                        <ul>
+
+                                            <li class="box-quantity">
+                                                <form action="#">
+                                                    <input class="quantity" type="number" min="1" value="1">
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <a class="details_cart" href="cart.html" title="加入购物车"
+                                                   data-original-title="加入购物车" tabindex="0">加入购物车</a>
+                                            </li>
+                                            <li>
+                                                <a class="details_wishlist" href="wishlist.html" title="加入心愿单"
+                                                   data-original-title="加入心愿单" tabindex="0"><i
+                                                        class="icofont-heart-alt"></i>加入心愿单</a>
+                                            </li>
+                                            <li>
+                                                <a class="details_compare" href="compare.html" title="加入对比"
+                                                   data-original-title="加入对比" tabindex="0"><i
+                                                        class="icofont-random"></i>加入对比</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <div class="pro-details-social">
+                                        <ul>
+                                            <li><a class="facebook" href="#" title="脸书"><i
+                                                    class="icofont-facebook"></i>点赞</a></li>
+                                            <li><a class="twitter" href="#" title="推特"><i
+                                                    class="icofont-twitter"></i>推文</a></li>
+                                            <li><a class="pinterest" href="#" title="品趣志"><i
+                                                    class="icofont-pinterest"></i>收藏</a></li>
+                                            <li><a class="google-plus" href="#" title="谷歌+"><i
+                                                    class="icofont-google-plus"></i>分享</a></li>
+                                            <li><a class="linkedin" href="#" title="领英"><i
+                                                    class="icofont-linkedin"></i>关联</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="secure_pay">
+                                        <h6>保证安全支付：</h6>
+                                        <img src="{% static 'img/icons/secure_pay.jpg' %}" alt="安全支付图标">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- 缩略图描述结束 -->
+
+                        </div>
+                        <!-- 行结束 -->
+                    </div>
+                    <!-- 模态框底部 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 快速查看内容结束 -->
+
+<!-- 错误闪现提示 -->
+<!-- ✅ 放在 body 末尾，独立于其他内容 -->
+{% if messages %}
+    <div class="overlay">
+        {% for message in messages %}
+            <div class="message-box">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+<!-- 错误闪现提示结束 -->
+
+<!-- 公共尾部信息结束 -->
+
+<!-- Modernizer js -->
+<script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<!-- jquery 3.3.1 -->
+<script src="{% static 'js/vendor/jquery-3.3.1.min.js' %}"></script>
+<!-- Mobile menu js -->
+<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+<!-- ScrollUp js -->
+<script src="{% static 'js/jquery.scrollUp.js' %}"></script>
+<!-- Jquery nice select js -->
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+<!-- Jquery ui price slider js -->
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<!-- Bootstrap popper js -->
+<script src="{% static 'js/popper.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- Plugin js -->
+<script src="{% static 'js/plugins.js' %}"></script>
+<!-- bootstarp 5 -->
+<script src="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js' %}"></script>
+<!-- Main activaion js -->
+<script src="{% static 'js/main.js' %}"></script>
+<!-- MyJs -->
+<script src="{% static 'js/MyJs.js' %}"></script>
+{##}
+{#    <script src="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/js/bootstrap.js' %}"></script>#}
+{#    <!--主要的js包为下，bootstrap 5不依赖于jq-->#}
+{#    <script src="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js' %}"></script>#}
+{#    <!--继承-->#}
+</body>
+</html>

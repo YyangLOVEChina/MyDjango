@@ -1,0 +1,74 @@
+<!-- 主页继承源主页模板 -->
+{% extends 'source_index.html' %}
+{% load static %}
+{% block pagebady %}
+    <!-- 面包屑导航区域开始 -->
+    <div class="breadcrumb-area" style="background-image: url({% static 'img/bg/breadcrumb_bg_2.jpg' %})">
+        <div class="container text-center">
+            <h3>欢迎登陆Pat Mall</h3>
+            <ol class="breadcrumb breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/index/">首页</a>
+                </li>
+                <li class="breadcrumb-item active">登录</li>
+            </ol>
+        </div>
+    </div>
+    <!-- 面包屑导航区域结束 -->
+
+    <!-- 登录页面开始 -->
+    <div class="login_wrapper adp_top adp_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-8 offset-xl-3 offset-lg-2">
+                    <div class="login-form">
+                        <h3 class="login-header">登录您的账户</h3>
+                        {# 登陆表单 #}
+                        <form method="post" novalidate>
+                        {% csrf_token %}
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-3 col-form-label">邮箱</label>
+                                <div class="col-sm-7">
+                                    {{ form.email }}
+                                    {# 显示错误 #}
+                                    {% if form.email.errors %}
+                                        <div class="alert-danger">
+                                            {% for error in form.email.errors %}
+                                                <p style="color: red">{{ error }}</p>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="div-high" style="height: 20px"></div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-3 col-form-label">密码</label>
+                                <div class="col-sm-7">
+                                    {{ form.password }}
+                                    {# 显示错误 #}
+                                    {% if form.password.errors %}
+                                        <div class="alert-danger">
+                                            {% for error in form.password.errors %}
+                                                <p style="color: red">{{ error }}</p>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                    <button class="btn show-btn" type="button">显示</button>
+                                </div>
+                            </div>
+                            <div class="login-details text-center" style="margin: 5px">
+                                <a href="forgot-password.html">忘记密码？</a>
+                                <button type="submit" class="login-btn">登录账户</button>
+                            </div>
+                            <div class="login-footer text-center">
+                                <p>没有账户？<a href="register.html">在此创建</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 登录页面结束 -->
+
+{% endblock %}
